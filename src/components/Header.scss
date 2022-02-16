@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+$negro: rgb(65, 65, 65);
+
+body{
+    margin: 0px;
+    background-color: white;
+}
+
+.section-header{
+    width: 100vw;
+    height: 8vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: inset 0px 8px 5px 0px #0000003b;
+}
+.header-left-side{
+    width: 39%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    color: #000000ab;
+    font-family: 'Fjalla One', sans-serif;
+    margin-left: 55px;
+    font-size: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+}
+.logo::before{
+    display: flex;
+    position: absolute;
+    margin-top: 73px;
+    margin-left: 0px; 
+    transform: scale(1, -1);
+    content: "TECHNIKA";
+
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to bottom, #1de9b600, #00000070);
+    -webkit-text-fill-color: transparent;
+    color: #46464642;
+}
+.header-right-side{
+    width: 61%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.form-search{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#search-bar{
+    height: 20px;
+    width: 390px;
+    outline: none;
+    border: none;
+    background-color: #545454;
+    box-shadow: 0px 0px 5px 0px #000000d9;
+    color: white;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+#label-search{ 
+    color: #545454;
+    margin-left: 5px;
+}
+.container-icon-cart{
+    width: 50%;
+    height: 100%;
+    padding: 15px;  
+    color: #545454;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
