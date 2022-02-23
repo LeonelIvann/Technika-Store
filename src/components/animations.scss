@@ -1,0 +1,98 @@
+.logo-h4{
+    animation-duration: 2900ms;
+    animation-name: titleChange;
+    animation-iteration-count: infinite;
+}
+.button-right-side > button{
+    animation-duration: 18500ms;
+    animation-name: buttonAnimation;
+    animation-iteration-count: infinite;
+}
+
+@keyframes titleChange {
+    from {
+        color: white;
+        text-shadow: -7px 3px 0px #00000026;
+    }
+    
+    10% {
+        color: white;
+        text-shadow: -2px 8px 0px #00000026;
+    }
+    20% {
+        color: #b1e957;
+        text-shadow: -7px 3px 0px #ffffff;
+    }
+    30% {
+        color: white;
+        text-shadow: -9px 3px 0px #00000026;
+    }
+    40% {
+        color: white;
+        text-shadow: -5px 4px 0px #00000026;
+    }
+    50% {
+        color: #ace355;
+        text-shadow: 6px 2px 0px #ffffff;
+    }
+    68% {
+        color: white;
+        text-shadow: 10px 1px 0px #00000026;
+    }
+    70% {
+        opacity: 0.7;
+        color: #00000026;
+        text-shadow: 11px 1px 0px #ec366d;
+    } 
+    75%{
+        color: #00000026;
+        text-shadow: 8px 1px 3px #ec366d;
+    }
+    80% {
+        color: #ec366d;
+        text-shadow: -7px 3px 2px black;
+    }
+    90% {
+        color: white;
+        text-shadow: -7px 3px 0px black;
+    }
+    100% {
+        color: white;
+        text-shadow: -7px 3px 0px black;
+    }
+}
+@keyframes buttonAnimation {
+    from {
+        color: #b8ff46;
+    }
+    10% {
+        color:  #b8ff4680;
+    }
+    20% {
+        color: #b8ff46;
+    }
+    30% {
+        color:  #b8ff4680;
+    }
+    40% {
+        color: #b8ff46;
+    }
+    50% {
+        color:  #b8ff4680;
+    }
+    60% {
+        color: #b8ff46;
+    }
+    70% {
+        color:  #b8ff4680;
+    } 
+    80%{
+        color: #b8ff46;
+    }
+    90% {
+        color:  #b8ff4680;
+    }
+    100% {
+        color: #b8ff46;
+    }
+}

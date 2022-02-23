@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("animations.scss");
+$negro: rgb(65, 65, 65);
+
+.section-header{
+    width: 100vw;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #b1e957;
+    box-shadow: inset 0px 8px 5px 0px #0000003b;
+}
+.header-left-side{
+    width: 35%;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    margin-left: 55px;
+    font-size: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+}
+.header-right-side{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.form-search{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#search-bar{
+    height: 35px;
+    width: 390px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #000000d9;
+    color: black;
+    border-radius: 3px;
+    padding-left: 15px;
+    transition: 500ms;
+}
+.button-search{
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: #6c6c6c;
+    font-weight: bolder;
+    border: none;
+    margin: 0px 0px 0px 0px;
+    box-shadow: 0px 0px 5px 0px #000000d9;
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 5px;
+}
+.button-search:focus{
+    box-shadow: inset 0px 0px 0px 20px #ffffff, 0px 0px 5px 1px #00000091;;
+}
+#label-search{ 
+    color: #b1e9577b;
+    padding-top: 3px;
+    margin-left: 5px;
+    transition: 500ms;
+}
+.container-icon-cart{
+    width: 50%;
+    height: 100%;
+    padding: 15px;  
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.cart, .expand{
+    padding: 3px;
+    background-color: #000000bf;
+    box-shadow: 0px 0px 7px 3px #2c3a1687;
+    margin: 0px 3px 0px 10px;
+    border: none;
+    border-radius: 8px;
+    transition: 600ms;
+}
+.cart:focus, .expand:focus{
+    transition: 500ms;
+    color:  #000000bf !important;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 7px 3px #2c3a1687;
+    border-radius: 8px;
+    transition: 600ms;
+    border: none;
+}
+.expand:focus{
+    .options{
+        margin-top: 20px;
+        margin-left: -100px;
+        position: fixed;
+        display: flex;
+        box-shadow: inset 0px 0px 0px 3px #b1e957, 0px 0px 14px 4px #b1e957;
+        transition: 600ms ease-in-out;
+    }
+    .options::before {
+        position: absolute;
+        margin-left: 95px;
+        margin-top: -155px;
+        content: "";
+        width: 25px;
+        height: 35px;
+        background-color: whitesmoke;
+        box-shadow: inset -3px 1px 0px 0px #b1e957;
+        transition: 600ms ease-in-out;
+    }
+    transition: 600ms ease-in-out;
+}
+.options{
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 3px;
+    font-size: 20px;
+    position: fixed;
+    margin-left: -80px;
+    padding: 5px;
+    height: 150px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    display: none;
+}
+.options li{
+    list-style: none;
+    text-align: left;
+}
+.options li a{
+    padding-left: 15px;
+    text-decoration: none;
+}
+.options li:hover{
+    background-color: black;
+    a{
+        color: #b1e957;
+    }
+    transition: 600ms;
+}

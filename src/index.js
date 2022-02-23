@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.scss';
 
 // Import Components
-import Header from './components/Header'
+import Header from './components/Navbar'
 import Card from './components/Card'
 
 class Principal extends React.Component{
@@ -13,8 +13,6 @@ class Principal extends React.Component{
                 <Header />
                 <hr></hr>
                 <div className='container-card'>
-                    <Card />
-                    <Card />
                     <Card />
                     <Card />
                 </div>

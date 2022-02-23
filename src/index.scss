@@ -2,6 +2,7 @@ body{
     margin: 0px;
     overflow: hidden;
     background-color: black;
+    z-index: 1;
 }
 .container-card{
     margin: 0px;
@@ -16,8 +17,9 @@ body{
     height: 90vh;
 }
 hr{
+    margin-top: 3px;
     opacity: 1;
     border: none;
-    height: 2px;
+    height: 1px;
     background-color: #b1e957;
 }

@@ -13,14 +13,15 @@
     transition: 500ms;
     box-shadow: 0px 0px 7px 2px #b1e957;
 }
+.span-buy{transition: 500ms;}
 .card:hover{
-    box-shadow: -9px 4px 12px 0px #b1e957ab, 3px -3px 11px 2px #ffffffa8;
+    box-shadow: -3px 4px 12px 0px #b1e957ab;
     border: solid 1px #b1e957ab;
     border-radius: 10px;
     transform: matrix3d(0.97,0,-0.26,0.0003,0.00,1,-0.09,0,0.26,0.09,0.97,0,0,0,0,1);
     .span-buy{
+        transform: rotate(-15deg);
         transition: 500ms;
-        transform: rotate(-10deg);
     }
     .form-Card{
         background-color:  #b1e957;
