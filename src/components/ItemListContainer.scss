@@ -1,0 +1,17 @@
+.ItemListContainer{
+    height: 100vh;
+    padding: 25px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // justify-content: space-between;
+}
+.ItemListContainer p{
+    height: fit-content;
+    width: fit-content;
+    color: white;
+    letter-spacing: 3px;
+    font-family: 'Source Sans Pro', sans-serif;
+}

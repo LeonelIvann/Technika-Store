@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 body{
     margin: 0px;
     overflow: hidden;
@@ -32,10 +36,11 @@ hr{
 #container{
     display: flex;
     flex-direction: column;
+    overflow: overlay;
     flex-grow: 1;
 }
 .main {
-    height: 3rem;
+    height: auto;
     width: auto;
     flex-grow: 1;
 }

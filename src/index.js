@@ -4,6 +4,7 @@ import './index.scss';
 
 // Import Components
 import Navbar from './components/Navbar'
+import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
 // import Card from './components/Card'
 
@@ -12,10 +13,14 @@ class Principal extends React.Component{
         return(
             <div id='container'>
                 <Navbar />
-                <main className='main'>
-                    
+                <main className="main">
+                    <ItemListContainer
+                    market="Technika"
+                    status="online"
+                    message="Gracias por visitarnos!"
+                    />
+                    <Footer/>
                 </main>
-                <Footer/>
             </div>
         );
     }

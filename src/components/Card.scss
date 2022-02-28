@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 .card{
-    width: 250px;
+    width: 15.6rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -55,6 +55,9 @@
     padding-left: 10px;
     margin: 5px 0px 0px 0px;
     text-align: left;
+}
+.card-text h3 {
+    padding-left: 0.7rem;
 }
 .form-Card{
     display: flex;

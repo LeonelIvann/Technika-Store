@@ -10,6 +10,7 @@ $negro: rgb(65, 65, 65);
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: space-between;
     background-color: #b1e957;
     box-shadow: inset 0px 8px 5px 0px #0000003b;
 }
@@ -47,7 +48,7 @@ $negro: rgb(65, 65, 65);
     align-items: center;
     justify-content: flex-end;
 }
-.cart, .expand{
+.expand{
     padding: 3px;
     background-color: #000000bf;
     box-shadow: 0px 0px 7px 3px #2c3a1687;
@@ -55,8 +56,9 @@ $negro: rgb(65, 65, 65);
     border: none;
     border-radius: 8px;
     transition: 600ms;
+    z-index: 2;
 }
-.cart:focus, .expand:focus{
+.expand:focus{
     transition: 500ms;
     color:  #000000bf !important;
     background-color: whitesmoke;
@@ -115,4 +117,10 @@ $negro: rgb(65, 65, 65);
         color: #b1e957;
     }
     transition: 600ms;
+}
+form.button-right-side {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 7rem;
 }
