@@ -1,5 +1,6 @@
 import React from "react";
 import './Card.scss';
+
 import exampleImg from '../images/4.jpg';
 
 function Card() {

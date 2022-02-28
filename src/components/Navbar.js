@@ -1,7 +1,9 @@
 import React from "react";
 import './Navbar.scss';
 
-function Header() {
+import SearchBar from './SearchBar';
+
+function Navbar() {
     return (
         <section className="section-header">
             <div className="header-left-side">
@@ -10,19 +12,16 @@ function Header() {
                 </div>
             </div>
             <div className="header-right-side">
-                <form className="form-search">
-                    <input type="text" id="search-bar" name="search" placeholder="Stickers de los 80's"></input>
-                    <button className="button-search" type="submit">SEARCH</button>
-                </form>
+                <SearchBar />
                 <div className="container-icon-cart">
                     <form action="#!" className="button-right-side">
                         <button class="material-icons cart">shopping_cart</button>
                         <button class="material-icons expand">expand_more
                         <div className="options">
-                <li><a href="#!">ARTISTAS</a></li>
-                <li><a href="#!">MUSICA</a></li>
-                <li><a href="#!">RIPTIDE</a></li>
-            </div>
+                            <li><a href="#!">ARTISTAS</a></li>
+                            <li><a href="#!">MUSICA</a></li>
+                            <li><a href="#!">RIPTIDE</a></li>
+                        </div>
                         </button>
                     </form>
                 </div>
@@ -31,4 +30,4 @@ function Header() {
     );
 }
 
-export default Header
+export default Navbar

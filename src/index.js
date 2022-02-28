@@ -3,19 +3,19 @@ import ReactDOM from 'react-dom'
 import './index.scss';
 
 // Import Components
-import Header from './components/Navbar'
-import Card from './components/Card'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+// import Card from './components/Card'
 
 class Principal extends React.Component{
     render(){
         return(
-            <div>
-                <Header />
-                <hr></hr>
-                <div className='container-card'>
-                    <Card />
-                    <Card />
-                </div>
+            <div id='container'>
+                <Navbar />
+                <main className='main'>
+                    
+                </main>
+                <Footer/>
             </div>
         );
     }

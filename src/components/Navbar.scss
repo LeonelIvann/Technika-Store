@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
 @import url("animations.scss");
 $negro: rgb(65, 65, 65);
 
 .section-header{
     width: 100vw;
-    height: 61px;
+    height: 3.8rem;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -35,47 +37,7 @@ $negro: rgb(65, 65, 65);
     height: 100%;
     display: flex;
     align-items: center;
-}
-.form-search{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#search-bar{
-    height: 35px;
-    width: 390px;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    background-color: white;
-    box-shadow: 0px 0px 5px 0px #000000d9;
-    color: black;
-    border-radius: 3px;
-    padding-left: 15px;
-    transition: 500ms;
-}
-.button-search{
-    background-color: transparent;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    color: #6c6c6c;
-    font-weight: bolder;
-    border: none;
-    margin: 0px 0px 0px 0px;
-    box-shadow: 0px 0px 5px 0px #000000d9;
-    border-radius: 4px;
-    padding: 5px;
-    margin-left: 5px;
-}
-.button-search:focus{
-    box-shadow: inset 0px 0px 0px 20px #ffffff, 0px 0px 5px 1px #00000091;;
-}
-#label-search{ 
-    color: #b1e9577b;
-    padding-top: 3px;
-    margin-left: 5px;
-    transition: 500ms;
 }
 .container-icon-cart{
     width: 50%;
@@ -105,7 +67,7 @@ $negro: rgb(65, 65, 65);
 }
 .expand:focus{
     .options{
-        margin-top: 20px;
+        margin-top: 19px;
         margin-left: -100px;
         position: fixed;
         display: flex;
