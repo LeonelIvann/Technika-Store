@@ -1,0 +1,35 @@
+.container-amount{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    height: fit-content;
+    margin: 0px;
+    
+    transition: 500ms;
+}
+.buttonAmount{
+    border: none;
+    background: none;
+    color: black;
+}
+.counter-amount{
+    background: none;
+    color: black;
+    text-align: center;
+    width: 8.5rem;
+    border: none;
+}
+.amount-div{
+    margin: 0px;
+    width: 13.5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.buy-div{
+    width: 13.5rem;
+}
