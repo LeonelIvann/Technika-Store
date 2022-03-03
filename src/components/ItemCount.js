@@ -17,7 +17,7 @@ function ItemCount({ stock, initial}) {
             setCounter(counter - 1)
         }
     }
-    const resetClick = () => {
+    const onAdd = () => {
         if (counter === 0) {
             console.log("No hay productos agregados")
         } else {
@@ -30,7 +30,7 @@ function ItemCount({ stock, initial}) {
     }
 
     console.log(counter)
-    
+
     return (
         <div className="container-amount">
                 <div className="amount-div">
@@ -46,7 +46,7 @@ function ItemCount({ stock, initial}) {
                     <form className ="form-Card" onSubmit={enviarDatos}>     
                     <p id="stock">{stock} (disponibles) </p>
                         <p id="price">$ 1800</p>
-                        <button className ="button-buy" onClick={resetClick}>
+                        <button className ="button-buy" onClick={onAdd}>
                             <span className ="material-icons span-buy">add_shopping_cart</span>
                         </button>
                     </form>
