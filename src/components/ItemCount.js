@@ -22,7 +22,7 @@ function ItemCount({ stock, initial}) {
             console.log("No hay productos agregados")
         } else {
             console.log("Agregaste"+" "+ counter+" productos")
-            setCounter(0)
+            setCounter(1)
         }
     }
     const enviarDatos = (event) => {
