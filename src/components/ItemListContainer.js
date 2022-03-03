@@ -1,11 +1,11 @@
 import React from 'react'
-import './ItemListContainer.scss';
+import './ItemListContainer.scss'
+import Card from './Card'
 
-function ItemListContainer(props) {
-  console.log(props)
+function ItemListContainer() {
   return (
         <section className='ItemListContainer'>
-          <p>Estás en {props.market}, en éste momento nos encontramos {props.status}, {props.message}</p>  
+          <Card />
         </section>
   )
 }

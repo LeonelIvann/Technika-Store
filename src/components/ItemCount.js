@@ -1,27 +1,41 @@
 import React from "react"
 import { useState } from "react";
-import './AmountBuy.scss'
+import './ItemCount.scss'
 
 
-function AmountBuy(props) {
+function ItemCount({ stock, initial}) {
 
-    const [counter, setCounter] = useState(props.initial)
-
+    const [counter, setCounter] = useState(initial)
+    
     const handleClick = () => {
-        setCounter(counter + 1);
-    }
+        if (counter < stock) {
+            setCounter(counter + 1)
+        }
+    } 
     const restClick = () => {
-        setCounter(counter - 1);
+        if (counter > initial) {
+            setCounter(counter - 1)
+        }
     }
     const resetClick = () => {
-        setCounter(0);
+        if (counter === 0) {
+            console.log("No hay productos agregados")
+        } else {
+            console.log("Agregaste"+" "+ counter+" productos")
+            setCounter(0)
+        }
+    }
+    const enviarDatos = (event) => {
+        event.preventDefault()
     }
 
+    console.log(counter)
+    
     return (
         <div className="container-amount">
                 <div className="amount-div">
-                    <button className="buttonAmount button-add">
-                        <span className="material-icons" onClick={restClick}>remove</span>
+                    <button className="buttonAmount button-add" onClick={restClick}>
+                        <span className="material-icons">remove</span>
                     </button>
                     <h4 className="counter-amount">{counter}</h4>
                     <button className="buttonAmount button-add" onClick={handleClick}>
@@ -29,7 +43,8 @@ function AmountBuy(props) {
                     </button>
                 </div>
                 <div className="buy-div">
-                    <form className ="form-Card">
+                    <form className ="form-Card" onSubmit={enviarDatos}>     
+                    <p id="stock">{stock} (disponibles) </p>
                         <p id="price">$ 1800</p>
                         <button className ="button-buy" onClick={resetClick}>
                             <span className ="material-icons span-buy">add_shopping_cart</span>
@@ -40,4 +55,4 @@ function AmountBuy(props) {
     );
 }
 
-export default AmountBuy
+export default ItemCount

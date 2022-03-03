@@ -5,7 +5,8 @@ function CartWidget() {
     return (
         <button className="material-icons cart">
             shopping_cart
-            <p id="cant-buy" >0</p>
+            <p id="cant-buy" > 0    
+            </p>
         </button>
     )
 }

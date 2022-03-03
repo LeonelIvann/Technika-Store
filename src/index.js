@@ -6,7 +6,6 @@ import './index.scss';
 import Navbar from './components/Navbar'
 import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
-// import Card from './components/Card'
 
 class Principal extends React.Component{
     render(){
@@ -14,11 +13,7 @@ class Principal extends React.Component{
             <div id='container'>
                 <Navbar />
                 <main className="main">
-                    <ItemListContainer
-                    market="Technika"
-                    status="online"
-                    message="Gracias por visitarnos!"
-                    />
+                    <ItemListContainer/>
                     <Footer/>
                 </main>
             </div>

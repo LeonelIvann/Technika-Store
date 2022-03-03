@@ -2,8 +2,12 @@ import React from "react";
 import './Card.scss';
 
 import exampleImg from '../images/4.jpg';
+import ItemCount from "./ItemCount";
 
 function Card() {
+
+    const miOnAdd = () => {}
+    
     return (
         <section className ="card product">
             <div className ="card-image">
@@ -12,12 +16,7 @@ function Card() {
             <div className ="card-text">
                 <h3 id="title">Poster Pyrokinesis</h3>
                 <p>De Andrea Cerrato</p>
-                <form className ="form-Card">
-                    <p id="price">$ 1800</p>
-                    <button className ="button-buy" type="submit">
-                    <span className ="material-icons span-buy">add_shopping_cart</span>
-                    </button>
-                </form>
+                <ItemCount initial={0} onAdd={miOnAdd} stock={3}/>
             </div>
         </section>
     )
