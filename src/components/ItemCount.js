@@ -3,12 +3,12 @@ import { useState } from "react";
 import './ItemCount.scss'
 
 
-function ItemCount({ stock, initial}) {
+function ItemCount({ stockItem, initial}) {
 
     const [counter, setCounter] = useState(initial)
     
     const handleClick = () => {
-        if (counter < stock) {
+        if (counter < stockItem) {
             setCounter(counter + 1)
         }
     } 
@@ -44,7 +44,7 @@ function ItemCount({ stock, initial}) {
                 </div>
                 <div className="buy-div">
                     <form className ="form-Card" onSubmit={enviarDatos}>     
-                    <p id="stock">{stock} (disponibles) </p>
+                    <p id="stock">{stockItem} (disponibles) </p>
                         <p id="price">$ 1800</p>
                         <button className ="button-buy" onClick={onAdd}>
                             <span className ="material-icons span-buy">add_shopping_cart</span>

@@ -1,11 +1,11 @@
 import React from 'react'
 import './ItemListContainer.scss'
-import Card from './Card'
+import ItemList from './ItemList'
 
 function ItemListContainer() {
   return (
         <section className='ItemListContainer'>
-          <Card />
+          <ItemList />
         </section>
   )
 }

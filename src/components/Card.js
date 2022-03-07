@@ -16,7 +16,7 @@ function Card() {
             <div className ="card-text">
                 <h3 id="title">Poster Pyrokinesis</h3>
                 <p>De Andrea Cerrato</p>
-                <ItemCount initial={1} onAdd={miOnAdd} stock={5}/>
+                <ItemCount initial={1} onAdd={miOnAdd} stock/>
             </div>
         </section>
     )
