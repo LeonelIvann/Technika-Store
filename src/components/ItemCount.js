@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react";
-import './ItemCount.scss'
 
+import './ItemCount.scss'
 
 function ItemCount({ stockItem, initial}) {
 

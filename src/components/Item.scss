@@ -24,9 +24,12 @@
 }
 .map-item{
     width: 240px;
-    height: 320px;
-    color: white;
+    height: -webkit-fill-available;
+    background-color: #edeeecb4;
+    box-shadow: 1px -1px 20px 0px #edeeecb4;
+    color: black;
     font-family: 'Source Sans Pro', sans-serif;
+    padding: 8px 10px 8px 10px;
 }
 .map-item p{
     margin: 10px 30px;
@@ -36,6 +39,7 @@
 .ImagenItem img{
     width: -webkit-fill-available;
     height: auto;
+    border-radius: 4px;
 }
 .ImagenItem{
     display: flex;

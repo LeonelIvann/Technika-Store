@@ -1,9 +1,15 @@
 import React from "react"
-import Item from "./Item"
+import { Item } from "./Item"
 
-function ItemList(items) {
+export const ItemList = ({productos}) => {
     return (
-        <Item />
+        <div className="shop-c">
+            {
+                productos.map(productos =>{
+                    return <Item producto={productos}/>
+                })
+            }
+        </div>
     )
 }
 

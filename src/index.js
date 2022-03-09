@@ -4,8 +4,8 @@ import './index.scss';
 
 // Import Components
 import Navbar from './components/Navbar'
-import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
+import ItemListContainer from './components/ItemListContainer'
 
 class Principal extends React.Component{
     render(){
@@ -14,8 +14,8 @@ class Principal extends React.Component{
                 <Navbar />
                 <main className="main">
                     <ItemListContainer/>
-                    <Footer/>
                 </main>
+                <Footer/>
             </div>
         );
     }
