@@ -8,7 +8,6 @@ import product1 from "../images/1.jpg"
 import product2 from "../images/2.jpg"
 import product3 from "../images/3.jpg" 
 import product4 from "../images/4.jpg" 
-import ItemCount from './ItemCount'
 
 export  const ItemListContainer = ({}) => {
 
@@ -65,7 +64,7 @@ export  const ItemListContainer = ({}) => {
         .finally(()=>{
           setLoading(false)
       })
-    })
+    },[])
 
 
   return (
