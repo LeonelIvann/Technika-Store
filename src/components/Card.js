@@ -5,8 +5,6 @@ import exampleImg from '../images/4.jpg';
 import ItemCount from "./ItemCount";
 
 function Card() {
-
-    const miOnAdd = () => {}
     
     return (
         <section className ="card product">
@@ -16,7 +14,7 @@ function Card() {
             <div className ="card-text">
                 <h3 id="title">Poster Pyrokinesis</h3>
                 <p>De Andrea Cerrato</p>
-                <ItemCount initial={1} onAdd={miOnAdd} stock/>
+                <ItemCount initial={1}/>
             </div>
         </section>
     )

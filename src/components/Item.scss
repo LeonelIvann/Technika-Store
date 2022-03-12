@@ -24,17 +24,20 @@
 }
 .map-item{
     width: 240px;
-    height: -webkit-fill-available;
-    background-color: #edeeecb4;
-    box-shadow: 1px -1px 20px 0px #edeeecb4;
+    height: 320px;
+    background-color: #b1e957;
+    box-shadow: 0px 40px 0px 0px #b1e957, inset 0px -1px 4px 0px #00000040;
     color: black;
+    letter-spacing: 0.7px;
+    font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif;
     padding: 8px 10px 8px 10px;
+    border-radius: 8px;
 }
 .map-item p{
-    margin: 10px 30px;
-    font-size: 18px;
-    height: 46px;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 240px;
 }
 .ImagenItem img{
     width: -webkit-fill-available;

@@ -46,12 +46,11 @@ export  const ItemListContainer = ({}) => {
     const [productos, setProductos] = useState([])
 
     useEffect(()=>{
-
         
         const promesa = new Promise((res,rej)=>{
             setTimeout(()=>{
                 res(productosIniciales)
-            },3000)
+            },18000)
         })
 
         promesa
@@ -66,10 +65,9 @@ export  const ItemListContainer = ({}) => {
       })
     },[])
 
-
   return (
     <>
-      <ItemList productos={productos}/> 
+      <ItemList productos={productosIniciales}/> 
     </>
   )
 }
