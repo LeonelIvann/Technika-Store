@@ -1,26 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import 'react-toastify/dist/ReactToastify.css';
 import './index.scss';
 
-// Import Components
+// Components
 import Navbar from './components/Navbar'
+import Main from './components/Main'
 import Footer from './components/Footer'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 
-class Principal extends React.Component{
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter } from 'react-router-dom';
 
+class Principal extends React.Component{
     render(){
         return(
+            <BrowserRouter>
             <div id='container'>
                 <Navbar />
-                <main className="main">
-                    <ItemListContainer />
-                    <ItemDetailContainer />
-                </main>
+                    <Main>
+                        <ItemListContainer />
+                        <ItemDetailContainer />
+                    </Main>
                 <Footer/>
+                    <ToastContainer />
             </div>
+            </BrowserRouter>
         );
     }
 

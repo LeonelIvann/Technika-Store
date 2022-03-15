@@ -48,7 +48,7 @@ hr{
 .shop-c{
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
-    height: 90vh;
+    justify-content: space-evenly;
+    height: -webkit-fill-available;
     padding: 10px 10px 10px 10px;
 }

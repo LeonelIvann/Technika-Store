@@ -1,7 +1,7 @@
 import React from "react"
-import "./Item.scss"
+import "./scss/Item.scss"
 
-import ItemCount from "./ItemCount"
+import { Link } from "react-router-dom";
 
 export function Item({ producto }) {
     return (
@@ -9,6 +9,9 @@ export function Item({ producto }) {
         <div className="map-item">
             <div className="ImagenItem"> {producto.imagen} </div>
             <p> {producto.nombre} </p>
+            <button className="button-detalles">
+                <Link to="/item/1"> VER DATALLES</Link>
+            </button>
         </div>
         
     )

@@ -8,7 +8,7 @@
     transition: 600ms;
     z-index: 2;
 }
-.cart:focus{
+.cart:hover{
     transition: 500ms;
     color:  #000000bf !important;
     background-color: whitesmoke;
@@ -39,7 +39,7 @@
     right: 65px;
     opacity: 0;
 }
-.cart:focus{
+.cart:hover{
     #cant-buy{
         position: static;
         display: flex;

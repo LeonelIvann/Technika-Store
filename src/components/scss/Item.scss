@@ -1,3 +1,5 @@
+@import url(./animations.scss);
+
 .products {
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -24,15 +26,45 @@
 }
 .map-item{
     width: 240px;
-    height: 320px;
+    height: -webkit-fill-available;
     background-color: #b1e957;
-    box-shadow: 0px 40px 0px 0px #b1e957, inset 0px -1px 4px 0px #00000040;
+    box-shadow: -1px -1px 15px 0px #b1e957, inset 0px -4px 10px 3px #00000040;
     color: black;
     letter-spacing: 0.7px;
     font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif;
     padding: 8px 10px 8px 10px;
     border-radius: 8px;
+    transition: 800ms;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.map-item:hover{
+    background: #141414;
+    box-shadow: -3px 0px 14px 3px #b1e957, inset 0px 0px 10px 4px #b1e957;
+    color: #b1e957;
+    transform: matrix3d(0.97, 0, -0.26, 0.0003, 0, 1, -0.09, 0, 0.26, 0.09, 0.97, 0, 0, 0, 0, 1);
+    transition: 800ms;
+    a{
+        color: black;
+        transition: 800ms;
+        padding: 1px 8px 1px 8px;
+        background-color: #b1e957;
+        border-radius: 3px;
+        transition: 800ms;
+    }
+    .button-detalles{
+        border-radius: 5px;
+
+        animation-duration: 19000ms;
+        animation-name: buttonDetalles;
+        animation-iteration-count: infinite;
+        transition: 800ms;
+    }
+}
+a{
+    transition: 800ms;
 }
 .map-item p{
     font-size: 1.1rem;
@@ -57,4 +89,10 @@
 }
 ul li{
     list-style-type: none
+}
+.button-detalles{
+    border: none;
+    border-radius: 8px;
+    background-color: #b1e957;
+    text-shadow: -1px 1px 16px #000000a3;
 }

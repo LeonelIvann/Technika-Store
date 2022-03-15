@@ -1,5 +1,5 @@
 import React from 'react'
-import './CartWidget.scss'
+import './scss/CartWidget.scss'
 
 function CartWidget() {
     return (

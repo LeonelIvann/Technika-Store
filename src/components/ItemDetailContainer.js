@@ -1,9 +1,11 @@
 import React from 'react'
+import { useParams } from "react-router-dom"
+import { toast, ToastContainer } from 'react-toastify';
 import { useState, useEffect } from "react"
 
 import ItemDetail from "./ItemDetail"
 
-import "./ItemDetailContainer.scss"
+import "./scss/ItemDetailContainer.scss"
 import imagen5 from "../images/5.jpg"
 
 export const ItemListContainer = ({}) => {
@@ -19,6 +21,7 @@ export const ItemListContainer = ({}) => {
         };
 
     const [productos, setProductos] = useState([]);
+    const { id } = useParams()
 
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
@@ -33,9 +36,9 @@ export const ItemListContainer = ({}) => {
                 setProductos(productosIniciales);
             })
             .catch((errorDeLaApi) => {
-                console.log(errorDeLaApi);
+                toast.error(errorDeLaApi);
             })
-    }, []);
+    }, [id]);
 
     return (
         <div className='containerDetail'>

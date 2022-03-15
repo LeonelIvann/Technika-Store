@@ -1,13 +1,22 @@
 import React from 'react'
-import { useState, useEffect } from "react"
 
-import './ItemListContainer.scss'
+import { useState, useEffect } from "react"
+import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from 'react-router-dom';
+
+import './scss/ItemListContainer.scss'
 import ItemList from './ItemList'
 
 import product1 from "../images/1.jpg"
 import product2 from "../images/2.jpg"
 import product3 from "../images/3.jpg" 
-import product4 from "../images/4.jpg" 
+
+import artist1 from "../images/ar-1.jpg" 
+import artist2 from "../images/ar-2.jpg" 
+import artist3 from "../images/ar-3.jpg" 
+
+import music1 from "../images/ms-1.jpg"
+
 
 export  const ItemListContainer = ({}) => {
 
@@ -36,21 +45,33 @@ export  const ItemListContainer = ({}) => {
     {
         id: 4,
         stock: 2,
-        nombre: "Pirokinesis",
-        imagen: <img src={product4} alt="" id="product-image"/>,
-        precio: 300
+        nombre: "Galileo Galilei",
+        imagen: <img src={artist1} alt="" id="product-image"/>,
+    },
+    {
+      id: 5,
+      nombre: "Descartes",
+      imagen: <img src={artist2} alt="" id="product-image"/>,
+    },
+    {
+      id: 6,
+      nombre: "Pasteur",
+      imagen: <img src={artist3} alt="" id="product-image"/>,
     },
 ]
 
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
+    const {id} = useParams()
+
+    console.log(useParams())
 
     useEffect(()=>{
-        
+
         const promesa = new Promise((res,rej)=>{
             setTimeout(()=>{
                 res(productosIniciales)
-            },18000)
+            },3400)
         })
 
         promesa
@@ -58,13 +79,12 @@ export  const ItemListContainer = ({}) => {
             setProductos(productosIniciales)
         })
         .catch((errorDeLaApi)=>{
-            console.log(errorDeLaApi)
+            toast.error(errorDeLaApi)
         })
         .finally(()=>{
           setLoading(false)
       })
-    },[])
-
+    },[id])
   return (
     <>
       <ItemList productos={productosIniciales}/> 

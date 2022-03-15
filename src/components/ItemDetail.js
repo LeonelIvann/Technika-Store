@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ItemDetail.scss";
+import "./scss/ItemDetail.scss";
 
 
 export function ItemDetail({ productos }) {
@@ -14,7 +14,7 @@ export function ItemDetail({ productos }) {
                     <p className='descripcion'>{productos.descripcion}</p>
                 </div>
                 <div className='product-info'>
-                    <h4> {productos.precio}</h4>
+                    <h4 className='stockPrice'> Precio <hr /> {productos.precio}</h4>
                     <h4 className='stockProd'> Cantidad Disponible <hr />{productos.stock}</h4>
                 </div>
             </div>

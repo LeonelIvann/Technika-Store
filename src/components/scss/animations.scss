@@ -1,3 +1,5 @@
+$buttonDetallesColor: #b1e957;
+
 .logo-h4{
     animation-duration: 2900ms;
     animation-name: titleChange;
@@ -94,5 +96,43 @@
     }
     100% {
         color: #b8ff46;
+    }
+}
+@keyframes buttonDetalles {
+    0% {
+        box-shadow: 0px 0px 14px 4px  $buttonDetallesColor;
+    }
+    5%{
+        box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
+    }
+    10% {
+        box-shadow: 0px 0px 14px 4px $buttonDetallesColor;
+    }
+    20% {
+        box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
+    }
+    30% {
+        box-shadow: 0px 0px 14px 4px $buttonDetallesColor;
+    }
+    40% {
+        box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
+    }
+    50% {
+        box-shadow: 0px 0px 14px 4px $buttonDetallesColor;
+    }
+    60% {
+        box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
+    }
+    70% {
+        box-shadow: 0px 0px 14px 4px $buttonDetallesColor;
+    }
+    80% {
+        box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
+    }
+    90% {
+        box-shadow: 0px 0px 14px 4px $buttonDetallesColor;
+    }
+    100% {
+        box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
     }
 }

@@ -67,7 +67,7 @@ $negro: rgb(65, 65, 65);
     transition: 600ms;
     border: none;
 }
-.expand:focus{
+.expand:hover{
     .options{
         margin-top: 19px;
         margin-left: -100px;
@@ -123,4 +123,8 @@ form.button-right-side {
     align-items: center;
     justify-content: right;
     width: 7rem;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
