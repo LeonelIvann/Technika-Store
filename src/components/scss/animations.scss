@@ -1,4 +1,5 @@
 $buttonDetallesColor: #b1e957;
+$insetShadow: #2c3a1644;
 
 .logo-h4{
     animation-duration: 2900ms;
@@ -134,5 +135,99 @@ $buttonDetallesColor: #b1e957;
     }
     100% {
         box-shadow: 0px 0px 4px 0px $buttonDetallesColor;
+    }
+}
+@keyframes buttonBuy {
+    0% {
+        color: rgba(0, 0, 0, 0.467);
+        text-shadow: 0px 0px 2px black;
+    }
+    5%{
+        color: black;
+        text-shadow: 0px 0px 5px black;
+    }
+    10% {
+        color: rgba(0, 0, 0, 0.467);
+        text-shadow: 0px 0px 2px black;
+    }
+    20% {
+        color: black;
+        text-shadow: 0px 0px 5px black;
+    }
+    30% {
+        color: rgba(0, 0, 0, 0.467);
+        text-shadow: 0px 0px 2px black;
+    }
+    40% {
+        color: black;
+        text-shadow: 0px 0px 5px black;
+    }
+    50% {
+        color: rgba(0, 0, 0, 0.467);
+        text-shadow: 0px 0px 2px black;
+    }
+    60% {
+        color: black;
+        text-shadow: 0px 0px 5px black;
+    }
+    70% {
+        color: rgba(0, 0, 0, 0.467);
+        text-shadow: 0px 0px 2px black;
+    }
+    80% {
+        color: black;
+        text-shadow: 0px 0px 5px black;
+    }
+    90% {
+        color: rgba(0, 0, 0, 0.467);
+        text-shadow: 0px 0px 2px black;
+    }
+    100% {
+        color: black;
+        text-shadow: 0px 0px 5px black;
+    }
+}
+@keyframes buttonBuyShadow {
+    0% {
+        box-shadow: 0px 0px 14px 2px #2c3a16ba;
+    }
+    5%{
+        box-shadow: 0px 0px 14px 2px $insetShadow, inset 0px 0px 14px 2px $insetShadow;
+        border-radius: 1px solid $insetShadow;
+    }
+    10% {
+        box-shadow: 0px 0px 14px 2px #2c3a16ba;
+    }
+    20% {
+        box-shadow: 0px 0px 14px 2px $insetShadow, inset 0px 0px 14px 2px $insetShadow;
+        border-radius: 1px solid $insetShadow;
+    }
+    30% {
+        box-shadow: 0px 0px 14px 2px #2c3a16ba;
+    }
+    40% {
+        box-shadow: 0px 0px 14px 2px $insetShadow, inset 0px 0px 14px 2px $insetShadow;
+        border-radius: 1px solid $insetShadow;
+    }
+    50% {
+        box-shadow: 0px 0px 14px 2px #2c3a16ba;
+    }
+    60% {
+        box-shadow: 0px 0px 14px 2px $insetShadow, inset 0px 0px 14px 2px $insetShadow;
+        border-radius: 1px solid $insetShadow;
+    }
+    70% {
+        box-shadow: 0px 0px 14px 2px #2c3a16ba;
+    }
+    80% {
+        box-shadow: 0px 0px 14px 2px $insetShadow, inset 0px 0px 14px 2px $insetShadow;
+        border-radius: 1px solid $insetShadow;
+    }
+    90% {
+        box-shadow: 0px 0px 14px 2px #2c3a16ba;
+    }
+    100% {
+        box-shadow: 0px 0px 14px 2px $insetShadow, inset 0px 0px 14px 2px #2c3a1644;
+        border-radius: 1px solid $insetShadow;
     }
 }

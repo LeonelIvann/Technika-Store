@@ -118,7 +118,7 @@ $negro: rgb(65, 65, 65);
     }
     transition: 600ms;
 }
-form.button-right-side {
+div.button-right-side {
     display: flex;
     align-items: center;
     justify-content: right;
@@ -127,4 +127,7 @@ form.button-right-side {
 a{
     text-decoration: none;
     color: black;
+}
+.active{
+    color: red;
 }

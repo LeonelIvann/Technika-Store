@@ -1,6 +1,7 @@
 import React from 'react';
 import "./scss/ItemDetail.scss";
 
+//import ItemCount from './ItemCount'
 
 export function ItemDetail({ productos }) {
     return (
@@ -14,7 +15,10 @@ export function ItemDetail({ productos }) {
                     <p className='descripcion'>{productos.descripcion}</p>
                 </div>
                 <div className='product-info'>
-                    <h4 className='stockPrice'> Precio <hr /> {productos.precio}</h4>
+                    <div className='container-ItemCount-detail'> 
+                        <h4 className='stockPrice'> Precio <hr /> {productos.precio}  </h4>
+                        {/* <ItemCount stockItem={1}/> */} 
+                    </div>
                     <h4 className='stockProd'> Cantidad Disponible <hr />{productos.stock}</h4>
                 </div>
             </div>

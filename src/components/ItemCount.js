@@ -7,9 +7,9 @@ function ItemCount({ stockItem, initial}) {
 
     const [counter, setCounter] = useState(initial)
     
-    const handleClick = () => {
+    const sumClick = () => {
         if (counter < stockItem) {
-            setCounter(counter + 1)
+            setCounter(counter + 1) 
         }
     } 
     const restClick = () => {
@@ -37,15 +37,13 @@ function ItemCount({ stockItem, initial}) {
                     <button className="buttonAmount button-add" onClick={restClick}>
                         <span className="material-icons">remove</span>
                     </button>
-                    <h4 className="counter-amount">{counter}</h4>
-                    <button className="buttonAmount button-add" onClick={handleClick}>
+                    <h4 className="counter-amount">{stockItem}</h4>
+                    <button className="buttonAmount button-add" onClick={sumClick}>
                         <span className="material-icons">add</span>
                     </button>
                 </div>
                 <div className="buy-div">
-                    <form className ="form-Card" onSubmit={enviarDatos}>     
-                    <p id="stock">{stockItem} (disponibles) </p>
-                        <p id="price">$ 1800</p>
+                    <form className ="form-Card" onSubmit={enviarDatos}>
                         <button className ="button-buy" onClick={onAdd}>
                             <span className ="material-icons span-buy">add_shopping_cart</span>
                         </button>
