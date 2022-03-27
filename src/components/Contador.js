@@ -23,13 +23,15 @@ function Contador({stock, initial}) {
             setCount(count - 1);
         }
     }
-    const onAdd = () => {
+    const addClick = () => {
         if (count === 0) {
             toast.error("Debe agregar al menos un producto");
         } else {
             toast.success(`${count} producto(s) agregado(s)`);
+            resultado.agregarProducto(resultado.producto, count);
             setCount(0);
         }
+
     }
 
     return (
@@ -44,7 +46,7 @@ function Contador({stock, initial}) {
                     </button>
                 </div>
                 <div className="buy-div">
-                        <button className ="button-buy" onClick={onAdd}>
+                        <button className ="button-buy" onClick={addClick}>
                             COMPRAR
                         </button>
                 </div>

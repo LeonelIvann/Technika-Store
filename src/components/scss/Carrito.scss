@@ -10,6 +10,7 @@
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     overflow: scroll;
+    border: 1px solid white;
 }
 .carrito-ul{
     padding: 0px;
@@ -17,27 +18,45 @@
 .li-carrito{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     color: white;
     border: 1px solid white;
 }
 .container-img-carrito{
-    width: 20rem;
+    width: 15rem;
     height: 10rem;
     overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 .carrito-container img{
     width: fit-content;
     height: fit-content;
+    margin-left: 0px;
 }
 .li-carrito button{
-    border: none;
     background: none;
-    color: white;
+    color: black;
+    border: 1px solid #141414c7;
+    background-color: #b1e957;
+    box-shadow: inset 0px 0px 9px 0px #141414c7;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    width: 44px;
+    font-family: monospace;
+    margin-right: 3rem;
+    transition: 500ms;
+}
+.li-carrito button:hover{
+    color: #b1e957;
+    background-color: #141414;
+    border: none;
+    box-shadow: 0px 0px 10px #b1e957;
+    transition: 500ms;
+}
+.li-carrito p{
+    font-size: 2rem;
 }
 .carrito-detalles{
     color: white;
@@ -52,4 +71,56 @@
 }
 .carrito-detalles p{
     font-size: 2rem;
+}
+.carrito-detalles button{
+    border: none;
+    background-color: transparent;
+    color: #b1e957;
+    font-size: 2rem;
+    transition: 500ms;
+}
+.carrito-detalles button:hover{
+    color: #141414;
+    background-color: #b1e957;
+    box-shadow: 0px 0px 10px #b1e957;
+    border-radius: 2px;
+    transition: 500ms;
+}
+.carrito-message{
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.carrito-message h1{
+    color: #b1e957;
+    font-family: 'Source Sans Pro';
+    letter-spacing: 2px;
+    font-size: xx-large;
+    font-variant: all-petite-caps;
+}
+.carrito-message a{
+    font-family: sans-serif;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    border: 1px solid #b1e957;
+    overflow: hidden;
+}
+.carrito-message a:hover{
+    background-color: #b1e957;
+    color: black;
+    border: none;
+    height: 2.3rem;
+    border: 1px solid #b1e957;
+    box-shadow: 0px 0px 10px #b1e957;
+    transition: 500ms;
+    h1{
+        letter-spacing: 5px;
+        color: rgba(0, 0, 0, 0.582);
+    }
 }

@@ -20,12 +20,13 @@ export const ItemListContainer = ({}) => {
         const promesa = new Promise((res, rej) => {
 
             setTimeout(() => {
-                const producto = arrayElements.find(producto => producto.id === id);
-                if (producto) {
+                if (arrayElements.find(producto => producto.id === id)) {
+                    const producto = arrayElements.find(producto => producto.id === id);
                     setProductos(producto);
-                    setLoading(false);
                 } else {
-                    rej("No se encontro el producto");
+                    rej("No se encontro el producto, estas viendo un producto por default");
+                    // muestra un producto por defecto en caso de que no se encuentre el producto
+                    setProductos(arrayElements[2]);
                 }
                 setLoading(false);
             }, 100);

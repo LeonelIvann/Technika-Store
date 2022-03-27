@@ -1,65 +1,23 @@
 import { createContext, useState } from "react";
-
 export const contexto = createContext()
 const { Provider } = contexto
 
 const MiProvider = ({children}) => {
 
-    const [carrito, setCarrito] = useState([
-        {
-            id: 1,
-            nombre: "Camisa",
-            precio: 50,
-            imagen: "https://www.hola.com/imagenes/mascotas/20180925130054/consejos-para-cuidar-a-un-gatito-recien-nacido-cs/0-601-526/cuidardgatito-t.jpg",
-        },
-        {
-            id: 2,
-            nombre: "Pantalon",
-            precio: 100,
-            imagen: "https://estaticos.muyinteresante.es/uploads/images/gallery/5971d8bb5bafe86c385a6625/gatito-atigrado-redes.jpg",
-        },
-        {
-            id: 2,
-            nombre: "Pantalon",
-            precio: 100,
-            imagen: "https://estaticos.muyinteresante.es/uploads/images/gallery/5971d8bb5bafe86c385a6625/gatito-atigrado-redes.jpg",
-        },
-        {
-            id: 1,
-            nombre: "Camisa",
-            precio: 50,
-            imagen: "https://www.hola.com/imagenes/mascotas/20180925130054/consejos-para-cuidar-a-un-gatito-recien-nacido-cs/0-601-526/cuidardgatito-t.jpg",
-        },
-        {
-            id: 2,
-            nombre: "Pantalon",
-            precio: 100,
-            imagen: "https://estaticos.muyinteresante.es/uploads/images/gallery/5971d8bb5bafe86c385a6625/gatito-atigrado-redes.jpg",
-        },
-        {
-            id: 2,
-            nombre: "Pantalon",
-            precio: 100,
-            imagen: "https://estaticos.muyinteresante.es/uploads/images/gallery/5971d8bb5bafe86c385a6625/gatito-atigrado-redes.jpg",
-        },
-        {
-            id: 1,
-            nombre: "Camisa",
-            precio: 50,
-            imagen: "https://www.hola.com/imagenes/mascotas/20180925130054/consejos-para-cuidar-a-un-gatito-recien-nacido-cs/0-601-526/cuidardgatito-t.jpg",
-        },
-    ])
-    const [total, setTotal] =     useState(0)
+    const [carrito, setCarrito] = useState([])
 
+    const [total, setTotal] = useState(0)
+
+    const cantidadItems = () => {
+        let cantidad = 0
+        carrito.map(producto => cantidad += producto.cantidad)
+        return cantidad
+    }
     const agregarProducto = (producto) => {
-        const productoExistente = carrito.find(p => p.id === producto.id)
-        if (productoExistente) {
-            productoExistente.cantidad += 1
-        } else {
-            producto.cantidad = 1
-            setCarrito([...carrito, producto])
-        }
-        setTotal(total + producto.precio)
+        setCarrito([
+            ...carrito,
+            producto
+        ])
     }
     const eliminarProducto = (id) => {
         const productos = carrito.filter(producto => producto.id !== id)
@@ -79,7 +37,6 @@ const MiProvider = ({children}) => {
         eliminarProducto,
         agregarProducto
     }
-
 
     const valorDelContexto = {
         total : total,

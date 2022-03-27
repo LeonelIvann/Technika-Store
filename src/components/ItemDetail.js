@@ -1,9 +1,12 @@
 import React from 'react';
 import "./scss/ItemDetail.scss";
+import { useContext } from 'react';
 
 import ItemCount from './Contador'
 
 export function ItemDetail({ productos }) {
+
+
     return (
         <div className='itemDetail'>
             <div className="itemDetailImage"> {productos.imagen} </div>
