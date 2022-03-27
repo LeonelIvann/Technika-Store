@@ -44,11 +44,33 @@ hr{
     width: auto;
     flex-grow: 1;
     overflow: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
 }
 .shop-c{
     display: flex;
     flex-flow: wrap;
     justify-content: space-evenly;
     height: -webkit-fill-available;
-    padding: 10px 10px 10px 10px;
+    width: 64rem;
+    padding: 0px 280px 10px 280px;
+    overflow: scroll;
+}
+#options-right{
+    visibility: hidden;
+    display: none;
+    transition: 700ms;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.options-right-pasive{
+    height: -webkit-fill-available;
+    width: 10rem;
+    box-shadow: -7px 6px 20px #0000003d;
+    visibility: visible !important;
+    display: block !important;
+}
+.options-pasive{
+    visibility: hidden;
 }

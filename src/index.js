@@ -13,23 +13,29 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom';
 
-class Principal extends React.Component{
-    render(){
-        return(
-            <BrowserRouter>
-            <div id='container'>
-                <Navbar />
-                    <Main>
-                        <ItemListContainer />
-                        <ItemDetailContainer />
-                    </Main>
-                <Footer/>
-                    <ToastContainer />
-            </div>
-            </BrowserRouter>
-        );
-    }
+import MiProvider from "./components/MiProvider";
+import Carrito from './components/Carrito';
 
+
+class Principal extends React.Component {
+    render() {
+        return (
+            <MiProvider>
+            <BrowserRouter>
+                    <div id='container'>
+                        <Navbar />
+                        <Main>
+                            <ItemListContainer />
+                            <ItemDetailContainer />
+                            <Carrito />
+                        </Main>
+                        <Footer />
+                        <ToastContainer />
+                    </div>
+                </BrowserRouter>
+            </MiProvider>
+        )
+    }
 }
 
 ReactDOM.render(<Principal />, document.getElementById('root'));

@@ -1,0 +1,55 @@
+.carrito-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.carrito-productos-container{
+    height: 84%;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: scroll;
+}
+.carrito-ul{
+    padding: 0px;
+}
+.li-carrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+}
+.container-img-carrito{
+    width: 20rem;
+    height: 10rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrito-container img{
+    width: fit-content;
+    height: fit-content;
+}
+.li-carrito button{
+    border: none;
+    background: none;
+    color: white;
+}
+.carrito-detalles{
+    color: white;
+    border: 1px solid white;
+    height: 4rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.carrito-detalles p{
+    font-size: 2rem;
+}

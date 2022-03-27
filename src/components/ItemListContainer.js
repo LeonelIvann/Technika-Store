@@ -1,38 +1,43 @@
 import React from "react";
-import arrayElements from "./data";
+import productos from "./data";
 
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useParams } from "react-router-dom";
 
 import "./scss/ItemListContainer.scss";
+import "./scss/loadingScreen.scss";
 import ItemList from "./ItemList";
 
 export const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
+  const [producto, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { id } = useParams();
+  const { categoria } = useParams();
 
   useEffect(() => {
-    const promesa = new Promise((resultado, rej) => {
-
+    const promesa = new Promise((res, rej) => {
+      
       setTimeout(() => {
-        const result2 = resultado
-        if (arrayElements.id === id) {
-          let filtr = arrayElements.filter(arrayElements => arrayElements.id === id)
-          result2(filtr)
+      if (categoria === "artistas") {
+          setProductos(productos.filter(productos => productos.categoria === "artistas"));
+          console.log("categoria artistas");
+        } else if (categoria === "riptide") {
+          setProductos(productos.filter(productos => productos.categoria === "riptide"));
+          console.log(" categoria riptide")
         } else {
-          toast.error("no hay coincidencia con")
-          resultado(result2)
+          setProductos(productos);
+          console.log("no hay categoria"); 
         }
-          console.log()
-      }, 6400);
-      toast.error("Hubo un error");
-    });
+        setLoading(false);
+        document.getElementById("options-right").classList.add("options-right-pasive");
+      }, 9100);
+    }, [categoria]); 
+
 
     promesa
       .then((respuestaDeLaApi) => {
-        toast.error("Hubo un error!")
+        setProductos(respuestaDeLaApi);
+        toast.error("Hubo un error!");
       })
       .catch((errorDeLaApi) => {
         toast.error(errorDeLaApi);
@@ -40,13 +45,23 @@ export const ItemListContainer = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [id]);
+  }, [productos, categoria]);
+
+  if (loading) {
+    return (
+      <div className="item-list-container">
+        <div className="item-list-loading">
+          <img src="https://media1.giphy.com/media/J4gENZz2SLhLnRDgTf/giphy.gif?cid=790b7611406f964ef25c6cb744eb8d5acb8d2f3649f7948a&rid=giphy.gif&ct=g" alt="loading" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
-      <ItemList productos={arrayElements} />
+    <ItemList productos={producto} loading={loading} /> 
     </>
   );
 };
 
-export default ItemListContainer;
+export default ItemListContainer

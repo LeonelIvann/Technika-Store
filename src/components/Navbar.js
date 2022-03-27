@@ -7,23 +7,42 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
+    const [optionsActive, setOptionsActive] = React.useState(false);
+
+    const toggleOptions = () => {
+        setOptionsActive(!optionsActive);
+        console.log(optionsActive);
+        if (optionsActive) {
+            document.getElementById("options").classList.remove("options-active-btn");
+            document.getElementById("options").classList.remove("options-active-color");
+            document.getElementById("options-li1").classList.add("options-pasive");
+            document.getElementById("options-li2").classList.add("options-pasive");
+            document.getElementById("options-li3").classList.add("options-pasive");
+            document.getElementById("options-li4").classList.add("options-pasive");
+            console.log("removiendo clase");
+        } else {
+            document.getElementById("options").classList.add("options-active-btn");
+            document.getElementById("options").classList.add("options-active-color");
+            document.getElementById("options-li1").classList.remove("options-pasive");
+            document.getElementById("options-li2").classList.remove("options-pasive");
+            document.getElementById("options-li3").classList.remove("options-pasive");
+            document.getElementById("options-li4").classList.remove("options-pasive");
+            console.log("agregando clase");
+        }
+    }
+
+
     return (
         <section className="section-header">
             <div className="logo">
-                <Link to={"./"}>
+                <Link to={"/"}>
                     <h4 className="logo-h4">TECHNIKA</h4>
                 </Link>
             </div>
             <SearchBar />
             <div className="button-right-side">
                 <CartWidget />
-                <button type="submit" className="material-icons expand">expand_more
-                    <div className="options">
-                        <li> <Link to={"categoria/artistas"} id="artistas">ARTISTAS</Link> </li>
-                        <li> <Link to={"categoria/musica"} id="musica"  >MUSICA   </Link> </li>
-                        <li> <Link to={"categoria/riptide"} id="riptide">RIPTIDE</Link> </li>
-                    </div>
-                </button>
+                    <button onClick={toggleOptions} className="material-icons menu-options" >expand_more</button>
             </div>
         </section>
     );

@@ -1,35 +1,36 @@
 import React from "react"
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { contexto } from "./MiProvider";
+import { toast, ToastContainer } from "react-toastify";
 
-import './scss/ItemCount.scss'
+import Carrito from "./Carrito";
+import './scss/Contador.scss'
 
-function ItemCount({ stockItem, initial}) {
+function Contador({stock, initial}) {
 
-    const [counter, setCounter] = useState(initial)
     
+
+    const [count, setCount] = useState(initial);
+    const resultado = useContext(contexto);
+
     const sumClick = () => {
-        if (counter < stockItem) {
-            setCounter(counter + 1) 
+        if (count < stock) {
+            setCount(count + 1)
         }
     } 
     const restClick = () => {
-        if (counter > initial) {
-            setCounter(counter - 1)
+        if (count > 0) {
+            setCount(count - 1);
         }
     }
     const onAdd = () => {
-        if (counter === 0) {
-            console.log("No hay productos agregados")
+        if (count === 0) {
+            toast.error("Debe agregar al menos un producto");
         } else {
-            console.log("Agregaste"+" "+ counter+" productos")
-            setCounter(1)
+            toast.success(`${count} producto(s) agregado(s)`);
+            setCount(0);
         }
     }
-    const enviarDatos = (event) => {
-        event.preventDefault()
-    }
-
-    console.log(counter)
 
     return (
         <div className="container-amount">
@@ -37,20 +38,18 @@ function ItemCount({ stockItem, initial}) {
                     <button className="buttonAmount button-add" onClick={restClick}>
                         <span className="material-icons">remove</span>
                     </button>
-                    <h4 className="counter-amount">{stockItem}</h4>
+                    <h4 className="counter-amount">{count}</h4>
                     <button className="buttonAmount button-add" onClick={sumClick}>
                         <span className="material-icons">add</span>
                     </button>
                 </div>
                 <div className="buy-div">
-                    <form className ="form-Card" onSubmit={enviarDatos}>
                         <button className ="button-buy" onClick={onAdd}>
-                            <span className ="material-icons span-buy">add_shopping_cart</span>
+                            COMPRAR
                         </button>
-                    </form>
                 </div>
         </div>
     );
 }
 
-export default ItemCount
+export default Contador

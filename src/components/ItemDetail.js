@@ -1,11 +1,10 @@
 import React from 'react';
 import "./scss/ItemDetail.scss";
 
-//import ItemCount from './ItemCount'
+import ItemCount from './Contador'
 
 export function ItemDetail({ productos }) {
     return (
-
         <div className='itemDetail'>
             <div className="itemDetailImage"> {productos.imagen} </div>
             <div className='itemDetails'>
@@ -17,7 +16,7 @@ export function ItemDetail({ productos }) {
                 <div className='product-info'>
                     <div className='container-ItemCount-detail'> 
                         <h4 className='stockPrice'> Precio <hr /> {productos.precio}  </h4>
-                        {/* <ItemCount stockItem={1}/> */} 
+                        <ItemCount stock={productos.stock} initial={1} />
                     </div>
                     <h4 className='stockProd'> Cantidad Disponible <hr />{productos.stock}</h4>
                 </div>

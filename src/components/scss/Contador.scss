@@ -53,27 +53,21 @@
     font-weight: initial;
 }
 .button-buy:hover{
-    background-color: transparent;
-    animation-duration: 15000ms;
-    animation-name: buttonBuyShadow;
+    background-color: white;
+    animation-duration: 18500ms;
+    animation-name: buttonBuy;
     animation-iteration-count: infinite;
-    .span-buy{
-        color: #2c3a1687;
-        animation-duration: 18500ms;
-        animation-name: buttonBuy;
-        animation-iteration-count: infinite;
-    }
+    transition: 600ms;
 }
 .button-buy{
     background-color: #000000bf;
     box-shadow: 0px 0px 7px 3px #2c3a1687;
     border: none;
-    padding: 4px;
+    font-size: 1.5rem;
+    font-family: unset;
     border-radius: 8px;
     transition: 600ms;
-    animation-duration: 18500ms;
-    animation-name: buttonAnimation;
-    animation-iteration-count: infinite;
+    color: rgba(255, 255, 255, 0.322);
     display: flex;
     align-items: center;
 }
