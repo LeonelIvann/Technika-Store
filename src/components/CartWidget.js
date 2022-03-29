@@ -7,12 +7,13 @@ import "../components/scss/CartWidget.scss";
 const CartWidget = () => {
 
     const { cantidadItems } = useContext(contexto);
+
     return (
         <Link to={"/carrito"}>
             <button className="material-icons cart">
                 shopping_cart
-                <p id="cant-buy" value={contexto}>
-                    {cantidadItems}
+                <p id="cant-buy">
+                    {contexto.cantidadItems}
                 </p>
             </button>
         </Link>

@@ -13,7 +13,6 @@ const Carrito = () => {
         toast.success("Gracias por su compra");
     }
 
-    // en caso de que el carrito este vacio muestra un mensaje de que no hay productos
     if (carrito.length === 0) {
         return (
             <div className="carrito-message">
@@ -37,7 +36,7 @@ const Carrito = () => {
 
                             <li key={producto.id} className="li-carrito">
                                 <div className="container-img-carrito">
-                                    <img src={producto.imagen} />
+                                    <img src={producto.img} />
                                 </div>
                                 <p>{producto.nombre}</p>
                                 <p>${producto.precio}</p>

@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom"
 import { toast, ToastContainer } from 'react-toastify';
 import { useState, useEffect } from "react"
 import { contexto } from "./MiProvider"
-    
+
 import ItemDetail from "./ItemDetail"
-import arrayElements from './data';
+import { dbFirestore } from '../firebase';
+import {query,getDocs,getDoc,doc,where,collection} from 'firebase/firestore';
 
 import "./scss/ItemDetailContainer.scss"
 import "./scss/loadingScreen.scss"
@@ -17,34 +18,20 @@ export const ItemListContainer = ({}) => {
     const { id } = useParams();
 
     useEffect(() => {
-        const promesa = new Promise((res, rej) => {
 
-            setTimeout(() => {
-                if (arrayElements.find(producto => producto.id === id)) {
-                    const producto = arrayElements.find(producto => producto.id === id);
-                    setProductos(producto);
-                } else {
-                    rej("No se encontro el producto, estas viendo un producto por default");
-                    // muestra un producto por defecto en caso de que no se encuentre el producto
-                    setProductos(arrayElements[2]);
-                }
-                setLoading(false);
-            }, 100);
-        }, [id]);
+        const q = query(collection(dbFirestore, "productos"), where("id", "==", id));
+        
+        getDocs(q)
+            .then((res) => setProductos(res.docs.map(p => ({ productos: p.data(), id: p.id }))) , setLoading(false))
+            .catch((err) => console.log("Error: ", err)); 
 
-        promesa
-            .then((respuestaDeLaApi) => {
-                setProductos(respuestaDeLaApi);
-                toast.error("Hubo un error!");
-            })
-            .catch((errorDeLaApi) => {
-                toast.error(errorDeLaApi);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+            /* const docRef = doc(dbFirestore, "productos" , id);
+            getDoc(docRef)
+            .then((res) => setProductos(res.data())) */
     }, [id]);
+    console.log(productos)
 
+    /* console.log(productos)
     if (loading) {
         return (
             <div className="item-list-container">
@@ -53,7 +40,7 @@ export const ItemListContainer = ({}) => {
                 </div>
             </div>
         )
-    }
+    }   */ 
 
     return (
         <div className='containerDetail'>

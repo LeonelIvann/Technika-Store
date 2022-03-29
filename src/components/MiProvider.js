@@ -9,10 +9,8 @@ const MiProvider = ({children}) => {
     const [total, setTotal] = useState(0)
 
     const cantidadItems = () => {
-        let cantidad = 0
-        carrito.map(producto => cantidad += producto.cantidad)
-        return cantidad
-    }
+        return carrito.reduce((total, item) => total + item.cantidad, 0)
+    }   
     const agregarProducto = (producto) => {
         setCarrito([
             ...carrito,

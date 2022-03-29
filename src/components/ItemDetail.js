@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { cantidadItems } from './MiProvider';
 import "./scss/ItemDetail.scss";
-import { useContext } from 'react';
+
 
 import ItemCount from './Contador'
 
 export function ItemDetail({ productos }) {
 
-
     return (
         <div className='itemDetail'>
-            <div className="itemDetailImage"> {productos.imagen} </div>
+            <div className="itemDetailImage"> 
+                <img src={productos.img} alt="Producto"/> 
+            </div>
             <div className='itemDetails'>
                 <div className='product-important-info'>
                     <p className='title'> {productos.nombre} </p>
