@@ -22,16 +22,13 @@ export const ItemListContainer = ({}) => {
         const q = query(collection(dbFirestore, "productos"), where("id", "==", id));
         
         getDocs(q)
-            .then((res) => setProductos(res.docs.map(p => ({ productos: p.data(), id: p.id }))) , setLoading(false))
-            .catch((err) => console.log("Error: ", err)); 
-
-            /* const docRef = doc(dbFirestore, "productos" , id);
-            getDoc(docRef)
-            .then((res) => setProductos(res.data())) */
+            .then((res) => setProductos(res.docs.map(p => ({ productos: p.data(), id: p.id }))))
+            .catch((err) => console.log("Error: ", err))
+            .finally(()=>{
+                setLoading(false)
+            })
     }, [id]);
-    console.log(productos)
 
-    /* console.log(productos)
     if (loading) {
         return (
             <div className="item-list-container">
@@ -40,7 +37,7 @@ export const ItemListContainer = ({}) => {
                 </div>
             </div>
         )
-    }   */ 
+    }  
 
     return (
         <div className='containerDetail'>

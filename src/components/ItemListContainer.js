@@ -16,37 +16,51 @@ export const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { idCategory } = useParams();
+  const { category } = useParams();
 
   useEffect(() => {
 
-    if (idCategory) {
-      const q = query(collection(dbFirestore, "productos"), where("categoria", "==", idCategory));
+    if (!category) {
 
-      getDocs(q)
-        .then((res) => setProductos(res.docs.map(p => ({ productos: p.data(), id: p.id })), setLoading(false)))
-        .catch((err) => console.log("Error: ", err));
+      const q = collection(dbFirestore, "productos")
+      const documentos = getDocs(q)
+
+      documentos
+        .then(respuesta => setProductos(respuesta.docs.map(doc => doc.data())))
+        .catch(error => toast.error("Error al obtener los productos"))
+        .finally(() => setLoading(false))
 
     } else {
-      getDocs(collection(dbFirestore, "productos"))
-        .then((res) => setProductos(res.docs.map(p => ({ productos: p.data(), id: p.id })), setLoading(false)))
-        .catch((err) => console.log("Error: ", err));
-    }
 
-    /* if (loading) {
-      return (
-        <div className="item-list-container">
-          <div className="item-list-loading">
-            <img src="https://media1.giphy.com/media/J4gENZz2SLhLnRDgTf/giphy.gif?cid=790b7611406f964ef25c6cb744eb8d5acb8d2f3649f7948a&rid=giphy.gif&ct=g" alt="loading" />
-          </div>
+      const q = collection(dbFirestore, "productos")
+      const miFiltro = query(q, where("category", "==", category))
+      const documentos = getDocs(miFiltro)
+
+      documentos
+        .then(respuesta => setProductos(respuesta.docs.map(doc => doc.data())))
+        .catch(error => toast.error("Error al obtener los productos"))
+        .finally(() => setLoading(false))
+
+    }
+    
+  }, [category]);
+  
+  console.log(category)
+  console.log(window.location.pathname);
+
+  if (loading) {
+    return (
+      <div className="item-list-container">
+        <div className="item-list-loading">
+          <img src="https://media1.giphy.com/media/J4gENZz2SLhLnRDgTf/giphy.gif?cid=790b7611406f964ef25c6cb744eb8d5acb8d2f3649f7948a&rid=giphy.gif&ct=g" alt="loading" />
         </div>
-      );
-    } */
-  }, [idCategory]);
+      </div>
+    );
+  }
 
   return (
     <>
-      <ItemList productos={productos}  loading={loading} />
+      <ItemList productos={productos} loading={loading} />
     </>
   );
 }

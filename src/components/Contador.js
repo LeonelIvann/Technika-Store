@@ -6,13 +6,10 @@ import { toast, ToastContainer } from "react-toastify";
 import Carrito from "./Carrito";
 import './scss/Contador.scss'
 
-function Contador({stock, initial}) {
+export const Contador = ({stock, initial, onAdd}) => {
 
+    const [count, setCount] = useState(initial); 
     
-
-    const [count, setCount] = useState(initial);
-    const resultado = useContext(contexto);
-
     const sumClick = () => {
         if (count < stock) {
             setCount(count + 1)
@@ -22,16 +19,6 @@ function Contador({stock, initial}) {
         if (count > 0) {
             setCount(count - 1);
         }
-    }
-    const addClick = () => {
-        if (count === 0) {
-            toast.error("Debe agregar al menos un producto");
-        } else {
-            toast.success(`${count} producto(s) agregado(s)`);
-            resultado.agregarProducto(resultado.producto, count);
-            setCount(0);
-        }
-
     }
 
     return (
@@ -46,7 +33,7 @@ function Contador({stock, initial}) {
                     </button>
                 </div>
                 <div className="buy-div">
-                        <button className ="button-buy" onClick={addClick}>
+                        <button className ="button-buy" onClick={()=> onAdd(count)}>
                             COMPRAR
                         </button>
                 </div>

@@ -8,11 +8,11 @@ export const Item = ({ producto }) => {
     return (
         <div className="map-item">
             <div className="imagenItem">  
-                <img src={productos.img} alt="Producto"/>  
+                <img src={producto.img} alt="Producto"/>  
             </div>
-            <p> {productos.nombre} </p>
+            <p> {producto.nombre} </p>
             <button className="button-detalles">
-                <Link to={`/item/${productos.id}`}> VER DETALLES</Link>
+                <Link to={`/item/${producto.id}`}> VER DETALLES</Link>
             </button>
         </div>
         
