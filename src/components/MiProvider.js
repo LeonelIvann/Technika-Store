@@ -9,11 +9,39 @@ const MiProvider = ({children}) => {
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
 
-    const agregarProducto = (item, cantidad) => {
-        const producto = {producto:item,cantidad}
-        setCarrito([...carrito, producto])
+    const busqueda = (busqueda) => {   
+        const resultado = busqueda.filter(function(sticker){
+            return sticker.name.toLowerCase().includes(busqueda.toLowerCase());
+        });
+        window.parent.postMessage(resultado, "/");
+        return resultado;
     }
-    
+
+    const agregarProducto = (item, cantidad) => {
+        const producto = carrito.find(producto => producto.id === item.id)
+        if (producto) {
+            const nuevoCarrito = carrito.map(producto => {
+                if (producto.id === item.id) {
+                    return {
+                        ...producto,
+                        cantidad: producto.cantidad + cantidad
+                    }
+                }
+                return producto
+            })
+            setCarrito(nuevoCarrito)
+            setTotal(total + item.precio * cantidad)
+        } else {
+            const nuevoProducto = {
+                ...item,
+                cantidad
+            }
+
+            setCarrito([...carrito, nuevoProducto])
+            setTotal(total + item.precio * cantidad)
+        }
+    }
+
     const limpiarCarrito = () => {
         setCarrito([])
     }

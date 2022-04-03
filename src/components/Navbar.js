@@ -31,6 +31,14 @@ function Navbar() {
         }
     }
 
+    // sí el menu es true entonces el valor de menuMessage es "cerrar menu", si es false entonces es "abrir menu"
+    let menuMessage = "abrir menu";
+    if (optionsActive) {
+        menuMessage = "cerrar menu";
+    } else {
+        menuMessage = "abrir menu";
+    }
+
 
     return (
         <section className="section-header">
@@ -42,7 +50,10 @@ function Navbar() {
             <SearchBar />
             <div className="button-right-side">
                 <CartWidget />
-                    <button onClick={toggleOptions} className="material-icons menu-options" >expand_more</button>
+                    <button onClick={toggleOptions} className="material-icons menu-options">
+                        <p id="pMenuPasive">{menuMessage}</p>
+                        <span className="material-icons">menu</span>
+                    </button>
             </div>
         </section>
     );

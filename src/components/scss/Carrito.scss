@@ -1,19 +1,37 @@
 .carrito-container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    flex-direction: row-reverse;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
 }
+.carrito-container h2{
+    margin-left: 20rem;
+}
+.totalGastado{
+    width: 30rem;
+}
+.totalGastado p{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
 .carrito-productos-container{
-    height: 84%;
+    height: -webkit-fill-available;
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
+}
+.carrito-ulContainer{
     overflow: scroll;
-    border: 1px solid white;
+    height: 45.4rem;
+    z-index: 1;
 }
 .carrito-ul{
     padding: 0px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 .li-carrito{
     display: flex;
@@ -21,11 +39,19 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    border: 1px solid white;
+    border: 1px solid #b1e9574a;
+}
+.box-cart{
+    height: auto;
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .container-img-carrito{
-    width: 15rem;
-    height: 10rem;
+    width: 19rem;
+    height: 11rem;
+    margin-left: 2rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -34,6 +60,7 @@
     width: fit-content;
     height: fit-content;
     margin-left: 0px;
+    border-radius: 20px;
 }
 .li-carrito button{
     background: none;
@@ -59,8 +86,6 @@
     font-size: 2rem;
 }
 .carrito-detalles{
-    color: white;
-    border: 1px solid white;
     height: 4rem;
     z-index: 1;
     display: flex;
@@ -123,4 +148,24 @@
         letter-spacing: 5px;
         color: rgba(0, 0, 0, 0.582);
     }
+}
+
+#modal-payment{
+    display: none;
+}
+.modal-payment-active{
+    display: flex;
+    width: 100%;
+    height: -moz-fit-content;
+    height: 100%;
+    background: #ffffff4d;
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.cart-prodName{
+    width: 20rem;
+    margin-left: 2rem;
 }

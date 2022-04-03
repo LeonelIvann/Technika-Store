@@ -30,11 +30,11 @@ export const ItemListContainer = () => {
         .catch(error => toast.error("Error al obtener los productos"))
         .finally(() => setLoading(false))
 
-    } else {
+    } else if (category === "artistas") {
 
       const q = collection(dbFirestore, "productos")
-      const miFiltro = query(q, where("category", "==", category))
-      const documentos = getDocs(miFiltro)
+        .where("artista", "==", "artista")
+      const documentos = getDocs(q)
 
       documentos
         .then(respuesta => setProductos(respuesta.docs.map(doc => doc.data())))
@@ -45,7 +45,6 @@ export const ItemListContainer = () => {
     
   }, [category]);
   
-  console.log(category)
   console.log(window.location.pathname);
 
   if (loading) {

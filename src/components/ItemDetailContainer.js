@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from "react-router-dom"
 import { toast, ToastContainer } from 'react-toastify';
 import { useState, useEffect } from "react"
@@ -15,6 +15,7 @@ export const ItemListContainer = ({}) => {
 
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { busqueda } = useContext(contexto);
     const { id } = useParams();
 
     useEffect(() => {
@@ -27,6 +28,7 @@ export const ItemListContainer = ({}) => {
             .finally(()=>{
                 setLoading(false)
             })
+        
     }, [id]);
 
     if (loading) {

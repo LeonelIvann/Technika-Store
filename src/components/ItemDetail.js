@@ -9,7 +9,7 @@ export function ItemDetail({ productos }) {
     const {agregarProducto} = useContext(contexto)
 
     const handleAdd = (cantidad) => {
-        agregarProducto(productos[0].productos.id, cantidad)
+        agregarProducto(productos[0], cantidad)
     }
 
     return (

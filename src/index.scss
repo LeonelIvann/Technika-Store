@@ -40,7 +40,7 @@ hr{
     flex-grow: 1;
 }
 .main {
-    height: auto;
+    height: -webkit-fill-available;
     width: auto;
     flex-grow: 1;
     overflow: scroll;
@@ -53,24 +53,28 @@ hr{
     display: flex;
     flex-flow: wrap;
     justify-content: space-evenly;
-    height: -webkit-fill-available;
+    height: 99%;
     width: 64rem;
-    padding: 0px 280px 10px 280px;
-    overflow: scroll;
+    padding: 0px 130px 10px 130px;
+    overflow: overlay;
 }
 #options-right{
     visibility: hidden;
     display: none;
     transition: 700ms;
     font-family: 'Source Sans Pro', sans-serif;
+    transition: 600ms;
+    width: 11rem;
 }
 .options-right-pasive{
     height: -webkit-fill-available;
-    width: 10rem;
+    width: 11rem;
     box-shadow: -7px 6px 20px #0000003d;
-    visibility: visible !important;
+    visibility: hidden !important;
     display: block !important;
+    transition: 600ms;
 }
 .options-pasive{
     visibility: hidden;
+    transition: 600ms;
 }
