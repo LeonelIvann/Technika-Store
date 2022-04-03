@@ -7,7 +7,6 @@ import "../components/scss/CartWidget.scss";
 
 export const CartWidget = ( cantidadItems ) => {
 
-    // necesito el contexto para poder acceder al total del carrito, si no hay productos agregados o comprados el valor será 0
     const { total } = useContext(contexto);
 
     return (

@@ -9,15 +9,9 @@ const MiProvider = ({children}) => {
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
 
-    const agregarProducto = (producto) => {
-        const productoExiste = carrito.find(prod => prod.id === producto.id)
-        if (productoExiste) {
-            toast.error("El producto ya está en su carrito, vaya a la sección de compras");
-            return;
-        }
+    const agregarProducto = (item, cantidad) => {
+        const producto = {producto:item,cantidad}
         setCarrito([...carrito, producto])
-        setTotal(total + producto.precio)
-        toast.success("Producto agregado al carrito")
     }
     
     const limpiarCarrito = () => {
