@@ -1,7 +1,7 @@
 .carrito-container{
     display: flex;
-    align-items: center;
-    justify-content: start;
+    align-items: baseline;
+    justify-content: center;
     flex-direction: row-reverse;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
@@ -10,16 +10,29 @@
     margin-left: 20rem;
 }
 .totalGastado{
-    width: 30rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    width: 50%;
+    height: 2rem;
+    overflow: hidden;
+}
+.totalGastado span{
+    margin-top: 0.4rem;
+    margin-left: 0.2rem;
 }
 .totalGastado p{
     margin-left: 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
+    font-variant: all-petite-caps;
 }
 .carrito-productos-container{
     height: -webkit-fill-available;
+    overflow: hidden;
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -27,6 +40,10 @@
     overflow: scroll;
     height: 45.4rem;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 .carrito-ul{
     padding: 0px;
@@ -38,15 +55,32 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    border: 1px solid #b1e9574a;
+    color: black;
+    border: 1px solid #6f9335;
+    background: #b1e957;
+    border-radius: 20px;
 }
 .box-cart{
-    height: auto;
-    width: -webkit-fill-available;
+    height: 11rem;
+    width: 40rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: end;
+    background: #141414;
+    box-shadow: inset 14px 0px 9px 0px #b1e957;
+    border-radius: 0px 20px 20px 0px;
+}
+.box-cart input{
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 1rem;
+}
+.box-cart button{
+    margin-right: 1rem;
+    width: fit-content;
 }
 .container-img-carrito{
     width: 19rem;
@@ -62,29 +96,6 @@
     margin-left: 0px;
     border-radius: 20px;
 }
-.li-carrito button{
-    background: none;
-    color: black;
-    border: 1px solid #141414c7;
-    background-color: #b1e957;
-    box-shadow: inset 0px 0px 9px 0px #141414c7;
-    border-radius: 5px;
-    font-size: 1.8rem;
-    width: 44px;
-    font-family: monospace;
-    margin-right: 3rem;
-    transition: 500ms;
-}
-.li-carrito button:hover{
-    color: #b1e957;
-    background-color: #141414;
-    border: none;
-    box-shadow: 0px 0px 10px #b1e957;
-    transition: 500ms;
-}
-.li-carrito p{
-    font-size: 2rem;
-}
 .carrito-detalles{
     height: 4rem;
     z-index: 1;
@@ -97,19 +108,12 @@
 .carrito-detalles p{
     font-size: 2rem;
 }
-.carrito-detalles button{
-    border: none;
-    background-color: transparent;
-    color: #b1e957;
-    font-size: 2rem;
-    transition: 500ms;
-}
-.carrito-detalles button:hover{
-    color: #141414;
-    background-color: #b1e957;
-    box-shadow: 0px 0px 10px #b1e957;
-    border-radius: 2px;
-    transition: 500ms;
+.box-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 11rem;
+    width: -webkit-fill-available;
 }
 .carrito-message{
     width: 100%;
@@ -128,7 +132,7 @@
 }
 .carrito-message a{
     font-family: sans-serif;
-    width: 10rem;
+    width: 17rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,23 +153,109 @@
         color: rgba(0, 0, 0, 0.582);
     }
 }
-
-#modal-payment{
+.cartUlDisable{
+    visibility: visible;
     display: none;
 }
-.modal-payment-active{
-    display: flex;
-    width: 100%;
-    height: -moz-fit-content;
-    height: 100%;
-    background: #ffffff4d;
-    backdrop-filter: blur(1px);
+.cart-prodName{
+    font-size: 4.6rem;
+    font-feature-settings: "pcap", "c2pc";
+    font-variant: all-petite-caps;
+    margin: 0px 0px 0px 0.5rem;
+}
+.cart-prodName2{
+    margin: -30px 0px 0px 0.5rem;
+    font-feature-settings: "pcap", "c2pc";
+    font-variant: all-petite-caps;
+    font-size: 2rem;
+}
+.modalContainerDisable{
+    visibility: hidden;
+    display: none;
+}
+.modalContainerActive{
+    visibility: visible;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    width: -webkit-fill-available;
+    height: 45.4rem;
 }
-.cart-prodName{
-    width: 20rem;
-    margin-left: 2rem;
+.modal-container {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.modal-content {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.modal-content p{
+    margin: 0px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-variant-caps: all-small-caps;
+}
+.modal-header {
+    height: 6rem;
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.modal-body {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.content-input {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30rem;
+}
+.content-input label{
+    text-align: left;
+    width: -webkit-fill-available;
+}
+.btnStyleUniversal{
+    font-size: 1.5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    background: transparent;
+    border: 1px solid #b1e957;
+    transition: 320ms;
+}
+.btnStyleUniversal:hover{
+    background-color: #b1e957;
+    color: black;
+    box-shadow: 0px 0px 10px #b1e957;
+    transition: 320ms;
+}
+#btnCancelForm{
+    display: none;
+}
+.btnCancelActive{
+    display: flex !important;
+}
+.btnClearActive{
+    display: none;
+}
+.btnPaymentDisable{
+    display: none;
+}
+.btnSubmitDisable{
+    display: none;
+}
+.precioFinal{
+    margin-left: 0px !important;
 }

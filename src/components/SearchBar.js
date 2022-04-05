@@ -8,20 +8,19 @@ function SearchBar() {
         setSearch(e.target.value);
     }
 
-    const filtrar=(busqueda)=>{
-        console.log(busqueda);
-        var resultado=busqueda.filter(function(sticker){
-            return sticker.name.toLowerCase().includes(busqueda.toLowerCase());
-        });
-        // pasar el resultado a la función de la página principal ItemDetailContainer.js para que se muestre en el componente ItemDetail.js 
-        window.parent.postMessage(resultado, "/");
-        return resultado;
-    }
+//    const filtrar=(busqueda)=>{
+//        console.log(busqueda);
+//        var resultado=busqueda.filter(function(sticker){
+//            return sticker.name.toLowerCase().includes(busqueda.toLowerCase());
+//        });
+//        window.parent.postMessage(resultado, "/");
+//        return resultado;
+//    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(search);
-        filtrar(search);
+    //  filtrar(search);
     } 
 
     return(

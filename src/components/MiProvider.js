@@ -9,14 +9,6 @@ const MiProvider = ({children}) => {
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
 
-    const busqueda = (busqueda) => {   
-        const resultado = busqueda.filter(function(sticker){
-            return sticker.name.toLowerCase().includes(busqueda.toLowerCase());
-        });
-        window.parent.postMessage(resultado, "/");
-        return resultado;
-    }
-
     const agregarProducto = (item, cantidad) => {
         const producto = carrito.find(producto => producto.id === item.id)
         if (producto) {
@@ -43,6 +35,7 @@ const MiProvider = ({children}) => {
     }
 
     const limpiarCarrito = () => {
+        toast.success("No es un adios, es un hasta luego!")
         setCarrito([])
     }
     const eliminarProducto = (id) => {
@@ -50,12 +43,26 @@ const MiProvider = ({children}) => {
         setCarrito(productos)
         setTotal(total - productos.precio)
     }
+    const actualizarCantidad = (id, cantidad) => {
+        const productos = carrito.map(producto => {
+            if (producto.id === id) {
+                return {
+                    ...producto,
+                    cantidad
+                }
+            }
+            return producto
+        })
+        setCarrito(productos)
+        setTotal(total - productos.precio)
+    }
+    
     const valorDelContexto = {
         total : total,
         carrito : carrito,
         agregarProducto : agregarProducto,
         eliminarProducto : eliminarProducto,
-        limpiarCarrito : limpiarCarrito
+        limpiarCarrito : limpiarCarrito,
     }
 
     return (

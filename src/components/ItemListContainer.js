@@ -45,7 +45,7 @@ export const ItemListContainer = () => {
     
   }, [category]);
   
-  console.log(window.location.pathname);
+  console.log(window.location.pathname, "Es la URL actual");
 
   if (loading) {
     return (

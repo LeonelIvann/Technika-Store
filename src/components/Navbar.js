@@ -7,11 +7,10 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
-    const [optionsActive, setOptionsActive] = React.useState(false);
+    const [optionsActive, setOptionsActive] = React.useState(true);
 
     const toggleOptions = () => {
         setOptionsActive(!optionsActive);
-        console.log(optionsActive);
         if (optionsActive) {
             document.getElementById("options").classList.remove("options-active-btn");
             document.getElementById("options").classList.remove("options-active-color");
@@ -19,7 +18,6 @@ function Navbar() {
             document.getElementById("options-li2").classList.add("options-pasive");
             document.getElementById("options-li3").classList.add("options-pasive");
             document.getElementById("options-li4").classList.add("options-pasive");
-            console.log("removiendo clase");
         } else {
             document.getElementById("options").classList.add("options-active-btn");
             document.getElementById("options").classList.add("options-active-color");
@@ -27,14 +25,12 @@ function Navbar() {
             document.getElementById("options-li2").classList.remove("options-pasive");
             document.getElementById("options-li3").classList.remove("options-pasive");
             document.getElementById("options-li4").classList.remove("options-pasive");
-            console.log("agregando clase");
         }
     }
+    let menuMessage = "";
 
-    // sí el menu es true entonces el valor de menuMessage es "cerrar menu", si es false entonces es "abrir menu"
-    let menuMessage = "abrir menu";
     if (optionsActive) {
-        menuMessage = "cerrar menu";
+        menuMessage = "Cerrar Menú";
     } else {
         menuMessage = "abrir menu";
     }
