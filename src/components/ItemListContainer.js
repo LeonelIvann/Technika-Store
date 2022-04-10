@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useParams } from "react-router-dom";
-// import Firebase
+
 import { getDocs, query, collection, where, getDoc } from "firebase/firestore";
 import { dbFirestore } from "../firebase";
 

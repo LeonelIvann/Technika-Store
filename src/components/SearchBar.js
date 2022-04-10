@@ -1,30 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import './scss/SearchBar.scss';
 
 function SearchBar() {
 
-    const [search, setSearch] = React.useState("");
-    const handleChange = (e) => {
-        setSearch(e.target.value);
-    }
-
-//    const filtrar=(busqueda)=>{
-//        console.log(busqueda);
-//        var resultado=busqueda.filter(function(sticker){
-//            return sticker.name.toLowerCase().includes(busqueda.toLowerCase());
-//        });
-//        window.parent.postMessage(resultado, "/");
-//        return resultado;
-//    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(search);
-    //  filtrar(search);
-    } 
+    const [search, setSearch] = useState("");
+    
 
     return(
-        <form className="form-search"  onSubmit={handleChange} >
+        <form className="form-search"  >
             <input type="text" id="search-bar" name="search" placeholder="Sticker de Joan Crawford"></input>
             <button className="button-search" type="submit">
                 <i className="material-icons">search</i>

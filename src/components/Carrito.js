@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { contexto } from "./MiProvider";
 import { toast } from "react-toastify";
 import React, { useState } from "react";
+import { addDoc, collection } from 'firebase/firestore'
+import { dbFirestore } from "../firebase";
 
 import "../components/scss/Carrito.scss";
 import { Link } from "react-router-dom";
@@ -9,17 +11,15 @@ import { Link } from "react-router-dom";
 export const Carrito = (productos) => {
 
     const carrito = useContext(contexto).carrito;
-    const { total } = useContext(contexto);
-    const { eliminarProducto, precioTotal, limpiarCarrito } = useContext(contexto);
-
-    const handlePagar = () => {
-        toast.success("Completa la siguiente información para generar el pedido");
-        handlePayment();
-    }
-
+    const { eliminarProducto, limpiarCarrito, total } = useContext(contexto);
+    
     const p = carrito.map((productos) => productos.id);
     const [modalActive, setModalActive] = useState(false);
-
+    
+    const handlePagar = () => {
+        toast.success("Rellena con tus datos, ya casi finalizas tu compra");
+        handlePayment();
+    }
     const handlePayment = () => {
         setModalActive(!modalActive);
         if (!modalActive) {
@@ -41,8 +41,37 @@ export const Carrito = (productos) => {
             console.log(modalActive)
         }
     }
+    const [UserForm, setUserForm] = useState({
+        nombre: "",
+        apellido: "",
+        email: ""
+    })
+    const handleInputChange = (e)=>{
 
-    console.log(p)
+        setUserForm({
+            ...UserForm,
+            [e.target.name]: e.target.value
+        })
+    }
+    const {nombre,apellido,email} = UserForm;
+    const createOrder = (e)=>{
+        e.preventDefault()
+
+        const orden = {
+            buyer: UserForm,
+            items: carrito,
+        }
+
+        addDoc(collection(dbFirestore, "pedidos"), orden)
+        .then((data)=> {
+            toast.success("Tu pedido ha sido realizado con éxito");
+            limpiarCarrito()
+        })
+        .catch((err)=> console.log(err))
+    }
+
+    
+
     if (carrito.length === 0) {
         return (
             <div className="carrito-message">
@@ -62,7 +91,7 @@ export const Carrito = (productos) => {
                 <div className="carrito-container">
                     <h2>COMPRAS</h2>
                     <div className="totalGastado">
-                            <p>{total.length}</p>
+                            <p id="pTotal">{total}</p>
                             <span className="material-icons">attach_money</span>
                             <p>Llevas un total de </p>
                     </div>
@@ -76,7 +105,7 @@ export const Carrito = (productos) => {
                                 </div>
                                 <div className="box-1">
                                     <p className="cart-prodName">{productos.productos.nombre}</p>
-                                    <p className="cart-prodName2">El total qué pagarás es de <strong>{productos.productos.precio * productos.cantidad}</strong> por <strong>{productos.cantidad}</strong> producto</p>
+                                    <p className="cart-prodName2">El total qué pagarás es de <strong>{productos.productos.precio * productos.cantidad}</strong> por <strong>{productos.cantidad}</strong> producto/S</p>
                                 </div>
                                 <div className="box-cart">
                                     <button onClick={() => eliminarProducto(productos.id)} className="btnStyleUniversal">
@@ -94,22 +123,23 @@ export const Carrito = (productos) => {
                             </div>
                             <p>rellene todo los campos con sus datos</p>
                             <div className="modal-body">
+                                <form onSubmitCapture={createOrder} id="formUsuario">
                                 <div className="content-input">
-                                    <label htmlFor="inp-Nombre">Nombre</label>
-                                    <input type="text" placeholder="Nombre" id="inp-Nombre"/>
+                                    <label>Nombre</label>
+                                    <input type="text" placeholder="Nombre" id="inp-Nombre" name="nombre" value={nombre} onChange={handleInputChange}/>
                                 </div>
                                 <div className="content-input">
-                                    <label htmlFor="inp-Apellido">Apellido</label>
-                                    <input type="text" placeholder="Apellido" id="inp-Apellido"/>
-                                </div>
+                                    <label>Apellido</label>
+                                    <input type="text" placeholder="Apellido" id="inp-Apellido" name="apellido" value={apellido} onChange={handleInputChange}/>
+                                </div> 
                                 <div className="content-input">
-                                    <label htmlFor="inp-Email">Correo Electronico</label>
-                                    <input type="email" placeholder="Correo Electronico" id="inp-Email"/>
+                                    <label>Correo Electronico</label>
+                                    <input type="email" placeholder="Correo Electronico" id="inp-Email" name="email" value={email} onChange={handleInputChange}/>
                                 </div>
-                                <p> {total} </p>
+                                </form>
                             </div>
                             <div className="modal-footer">
-                                
+                                <p id="advertencia-order">AÚN ESTAS A TIEMPO DE CANCELAR TU PEDIDO</p>
                             </div>
                         </div>
                     </div>
@@ -118,7 +148,7 @@ export const Carrito = (productos) => {
                     <button onClick={limpiarCarrito} id="btnClear" className="btnStyleUniversal">VACIAR</button>
                     <button onClick={limpiarCarrito} id="btnCancelForm" className="btnStyleUniversal">BOTÓN DE ARREPENTIMIENTO</button>
                     <button onClick={handlePagar} id="btnPayment" className="btnStyleUniversal"> TERMINAR DE COMPRAR </button>
-                    <button  id="btnSubmit" className="btnStyleUniversal btnSubmitDisable"> ENVIAR </button>
+                    <button  id="btnSubmit" className="btnStyleUniversal btnSubmitDisable" form="formUsuario"> ENVIAR </button>
                 </div>
             </article>
         </>

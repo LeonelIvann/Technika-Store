@@ -21,44 +21,27 @@ const MiProvider = ({children}) => {
                 }
                 return producto
             })
+            const nuevoTotal = total + item.precio * cantidad 
+            setTotal(nuevoTotal)
             setCarrito(nuevoCarrito)
-            setTotal(total + item.precio * cantidad)
         } else {
             const nuevoProducto = {
                 ...item,
                 cantidad
             }
-
             setCarrito([...carrito, nuevoProducto])
-            setTotal(total + item.precio * cantidad)
         }
     }
-
     const limpiarCarrito = () => {
-        toast.success("No es un adios, es un hasta luego!")
         setCarrito([])
     }
     const eliminarProducto = (id) => {
         const productos = carrito.filter(producto => producto.id !== id)
         setCarrito(productos)
-        setTotal(total - productos.precio)
     }
-    const actualizarCantidad = (id, cantidad) => {
-        const productos = carrito.map(producto => {
-            if (producto.id === id) {
-                return {
-                    ...producto,
-                    cantidad
-                }
-            }
-            return producto
-        })
-        setCarrito(productos)
-        setTotal(total - productos.precio)
-    }
-    
+
     const valorDelContexto = {
-        total : total,
+        total: total,
         carrito : carrito,
         agregarProducto : agregarProducto,
         eliminarProducto : eliminarProducto,

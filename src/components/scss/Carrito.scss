@@ -211,7 +211,7 @@
     justify-content: space-evenly;
 }
 .modal-body {
-    height: -webkit-fill-available;
+    height: 30rem;
     width: -webkit-fill-available;
     display: flex;
     align-items: center;
@@ -258,4 +258,10 @@
 }
 .precioFinal{
     margin-left: 0px !important;
+}
+#pTotal{
+    margin-left: 0px;
+}
+#advertencia-order{
+    font-size: 2rem;
 }
