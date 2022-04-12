@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Technika-Store/static/css/main.cac4ac49.css",
+    "main.js": "/Technika-Store/static/js/main.f5343458.js",
+    "index.html": "/Technika-Store/index.html",
+    "main.cac4ac49.css.map": "/Technika-Store/static/css/main.cac4ac49.css.map",
+    "main.f5343458.js.map": "/Technika-Store/static/js/main.f5343458.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cac4ac49.css",
+    "static/js/main.f5343458.js"
+  ]
+}
