@@ -4,6 +4,12 @@ Esta hecho en con React 17.0.2 y Firebase como entorno para la base de datos, al
 
 <br>
 
+## Demo Online 
+Puedes probarlo en el siguiente link
+<a href="https://leonelivann.github.io/Technika-Store"> Technika Store </a> <br>
+<img src="https://media.giphy.com/media/jwkmmBAANAt36F79c2/giphy.gif" width="620" height="380" />
+
+
 ## Instalación
 Necesitarás tener Git Bash o CMD y una carpeta donde almacenarlo <br> copia y pega la siguiente linea de código para clonar el repositorio a tu carpeta elegida
 ```bash

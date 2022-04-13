@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { toast } from "react-toastify";
 export const contexto = createContext()
 
 const { Provider } = contexto

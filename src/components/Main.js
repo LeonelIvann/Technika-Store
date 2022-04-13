@@ -10,7 +10,7 @@ const Main = (props) => {
     return (
         <main className="main">
             <Routes>
-                <Route path="/" element={<ItemListContainer/>}/>
+                <Route path="/Technika-Store" element={<ItemListContainer/>}/>
                 <Route path="/carrito"  element={<Carrito/>}/>
                 <Route path="/category/:id"  element={<ItemListContainer/>}/>
                 <Route path="/item/:id"  element={<ItemDetailContainer/>}/>

@@ -76,8 +76,7 @@ export const Carrito = (productos) => {
         return (
             <div className="carrito-message">
                 <h1>No hay productos agregados</h1>
-                <Link to="/">
-                    {" "}
+                <Link to="/Technika-Store">
                     <button className="btnStyleUniversal">
                         <h1>BACK TO FUTURE!</h1>{" "}
                     </button>

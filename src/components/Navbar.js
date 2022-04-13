@@ -39,7 +39,7 @@ function Navbar() {
     return (
         <section className="section-header">
             <div className="logo">
-                <Link to={"/"}>
+                <Link to={"/Technika-Store"}>
                     <h4 className="logo-h4">TECHNIKA</h4>
                 </Link>
             </div>

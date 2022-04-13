@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { contexto } from './MiProvider';
-import { toast } from 'react-toastify';
 
 import "../components/scss/CartWidget.scss";
 
