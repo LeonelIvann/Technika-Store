@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Technika-Store/static/css/main.cac4ac49.css",
+    "main.css": "/Technika-Store/static/css/main.868f8eb6.css",
     "main.js": "/Technika-Store/static/js/main.c0347c0d.js",
     "index.html": "/Technika-Store/index.html",
-    "main.cac4ac49.css.map": "/Technika-Store/static/css/main.cac4ac49.css.map",
+    "main.868f8eb6.css.map": "/Technika-Store/static/css/main.868f8eb6.css.map",
     "main.c0347c0d.js.map": "/Technika-Store/static/js/main.c0347c0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.cac4ac49.css",
+    "static/css/main.868f8eb6.css",
     "static/js/main.c0347c0d.js"
   ]
 }
