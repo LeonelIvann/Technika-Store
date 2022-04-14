@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { contexto } from "./MiProvider";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import React, { useState } from "react";
 import { addDoc, collection } from 'firebase/firestore'
 import { dbFirestore } from "../firebase";
@@ -65,6 +65,7 @@ export const Carrito = (productos) => {
         addDoc(collection(dbFirestore, "pedidos"), orden)
         .then((data)=> {
             toast.success("Tu pedido ha sido realizado con éxito");
+            toast.success("El número de tu pedido es: " + data.id);
             limpiarCarrito()
         })
         .catch((err)=> console.log(err))
