@@ -1,6 +1,6 @@
 # Technika Store
 Technika es una tienda virtual de stickers, fue realizada como proyecto para el curso de React de CoderHouse. <br>
-Esta hecho en con React 17.0.2 y Firebase como entorno para la base de datos, al principio iba ser responsive desde 1366x719 pero por la falta de tiempo no tuve tiempo, de todas maneras éste proyecto continuará un tiempo más en desarrollo.
+Esta hecho en con React 17.0.2 y Firebase como entorno para la base de datos, al principio iba ser responsive desde 1366x719 pero por la falta de tiempo no se concreto, de todas maneras éste proyecto continuará un tiempo más en desarrollo.
 
 <br>
 
